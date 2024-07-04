@@ -31,7 +31,7 @@ Hence, Concurrent Collections never throw `ConcurrentModificationException`.
 
 ## ConcurrentMap(I)
 
-<img alt="concurrent_map" height="300" src="img/concurrent_map.png" width="300"/>
+<img alt="concurrent_map" height="200" src="img/concurrent_map.png" width="300"/>
 
 ### Methods
 
