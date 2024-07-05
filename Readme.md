@@ -46,4 +46,20 @@ Hence, Concurrent Collections never throw `ConcurrentModificationException`.
 
 
 
+## CopyOnWriteArrayList(C)
+
+<img alt="concurrent_map" src="img/copy_on_write_arraylist.png"/>
+
+
+## Overview
+`CopyOnWriteArrayList` is a thread-safe variant of `ArrayList` in Java. It implements the `List` interface and inherits from the `Collection` interface.
+
+## Key Characteristics
+- **Thread Safety**: As the name suggests, `CopyOnWriteArrayList` ensures thread safety. This means it can be safely used in a multi-threaded environment without requiring additional synchronization.
+- **Copy-On-Write Mechanism**: For every update operation (add, set, etc.), a cloned copy of the underlying `ArrayList` is created. This helps in maintaining thread safety while performing update operations.
+- **Synchronization**: Both the original and cloned `ArrayList` are synchronized automatically by the JVM, ensuring data consistency and integrity.
+
+## Usage
+`CopyOnWriteArrayList` is particularly useful in scenarios where read operations are more frequent than write operations. Since the `CopyOnWriteArrayList` creates a new copy of the array with each write operation, it can be less efficient for scenarios with frequent writes but provides excellent performance for scenarios with many reads and few writes.
+
     
