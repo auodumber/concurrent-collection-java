@@ -1,5 +1,8 @@
 package org.example.copyonwritearraylist;
 
+import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
+
 /**
  * @author CMKL-Auodumber Mande
  */
@@ -17,10 +20,51 @@ package org.example.copyonwritearraylist;
     8. Iterator of `ArrayList` can perform remove operation but iterator of `CopyOnWriteArrayList` cant perform remove operation
        otherwise we will get RuntimeException saying `UnsupportedOperationException`.
 
+       // Constructors:
+
+        1) CopyOnWriteArrayList l = new CopyOnWriteArrayList();
+
+        2) CopyOnWriteArrayList l = new CopyOnWriteArrayList(Collection c);
+
+        3) CopyOnWriteArrayList l = new CopyOnWriteArrayList(Object[] a);
+
+
 */
 public class CopyOnWriteArrayListExample {
 
     public static void main(String[] args) {
+        //addIfAbsentExample();
+        addAllIfAbsentExample();
+    }
 
+    public static void addIfAbsentExample(){
+        CopyOnWriteArrayList<String> cowAl = new CopyOnWriteArrayList<>();
+        cowAl.add("Apple");
+        cowAl.add("Banana");
+        System.out.println(cowAl); // [Apple,Banana]
+
+        cowAl.addIfAbsent("Pineapple");
+        cowAl.addIfAbsent("Apple"); //return false
+
+        System.out.println(cowAl); //[Apple,Banana,Pineapple]
+
+    }
+
+    public static void addAllIfAbsentExample(){
+        ArrayList<String> fruits = new ArrayList<>();
+        fruits.add("Watermelon");
+        fruits.add("Kiwi");
+        System.out.println(fruits); //[Watermelon, Kiwi]
+
+        CopyOnWriteArrayList<String> cowAl = new CopyOnWriteArrayList<>();
+        cowAl.addIfAbsent("Apple");
+        cowAl.addIfAbsent("Banana");
+        System.out.println(cowAl);  //[Apple, Banana]
+
+        cowAl.addIfAbsent("Kiwi");
+        System.out.println(cowAl); //[Apple, Banana, Kiwi]
+
+        cowAl.addAllAbsent(fruits);
+        System.out.println(cowAl); //[Apple, Banana, Kiwi, Watermelon]
     }
 }

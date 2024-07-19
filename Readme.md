@@ -48,7 +48,7 @@ Hence, Concurrent Collections never throw `ConcurrentModificationException`.
 
 ## CopyOnWriteArrayList(C)
 
-<img alt="concurrent_map" src="img/copy_on_write_arraylist.png"/>
+<img alt="copy_on_write_arraylist" width="300" height="300" src="img/copy_on_write_arraylist.png"/>
 
 
 ## Overview
