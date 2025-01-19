@@ -7,7 +7,7 @@ import java.util.concurrent.ConcurrentHashMap;
  *
  *  1. Underlying Data Structure is HashTable
  *
- *  2. To Perform read operation thread won't require ant lock. But to perform update operation thread required
+ *  2. To Perform read operation thread won't require a lock. But to perform update operation thread required
  *     lock but, it is the lock of only a particular part of Map (Buket/Segement level lock)
  *
  *  3. Instead of whole map concurrent update achieved by internally dividing map into samller portion which is defined
